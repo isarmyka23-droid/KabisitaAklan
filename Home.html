@@ -1,0 +1,2141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aklan: History and Towns</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" defer crossorigin="anonymous"></script>
+  <script src="auth.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <img class="aklanbg" src="pexels-rico-14222330.jpg" alt="" aria-hidden="true" />
+
+  <nav class="topnav" aria-label="Main navigation">
+    <a class="logo-link" href="#home" aria-label="Kabisita Aklan home">
+      <img class="logo" src="KabisitaAklanLogo-removebg-preview.png" alt="Kabisita Aklan" />
+    </a>
+
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#history">History</a>
+      <a href="#map-section">Map</a>
+      <a href="#culture">Festivals</a>
+      <a href="#tourism">Explore</a>
+      <a href="#towns">Towns</a>
+      <a href="#milestones">Milestones</a>
+      <a href="#feedback-form">Feedback</a>
+      <button class="login-open" type="button" data-login-open>Log in</button>
+    </div>
+  </nav>
+
+  <header class="aklan-hero" id="home">
+    <video class="background-video" id="hero-video" src="videos/aklan-intro.mp4" poster="kiss.jpg" autoplay muted loop
+      playsinline></video>
+
+    <div class="hero-shade"></div>
+
+    <div class="hero-shell">
+      <div class="hero-copy">
+        <p class="hero-kicker">The island of adventure</p>
+        <h1>
+          <span id="hero-title-main">Discover</span><br>
+          <em id="hero-title-accent">Boracay.</em>
+        </h1>
+        <p id="hero-description">Start with the island’s famous shores, then discover the places beyond them.</p>
+      </div>
+
+      <div class="hero-gallery">
+        <button class="hero-card active" type="button" data-title-main="Discover" data-title-accent="Boracay."
+          data-description="Start with Boracay’s famous shores and discover what lies beyond the beach."
+          data-video="kiss.mp4">
+          <img src="boracay.jpg" alt="Boracay Island">
+          <span class="hero-card-info"><strong>Boracay Island</strong></span>
+
+        </button>
+
+        <button class="hero-card" type="button" data-title-main="Find your" data-title-accent="highland escape."
+          data-description="Leave the busy coast behind and explore Aklan’s hills, rivers, and waterfalls."
+          data-video="kissed.mp4">
+          <img src="Manduyog Hill.jpg" alt="Manduyog Hill">
+          <span class="hero-card-info"><strong>Manduyog Hill</strong></span>
+        </button>
+
+        <button class="hero-card" type="button" data-title-main="Chase the" data-title-accent="coastline."
+          data-description="Follow the coast and find quiet beaches, local culture, and unforgettable views."
+          data-video="14506495_3840_2160_30fps.mp4">
+          <img src="hinugtan.jpg" alt="Hinugtan Beach">
+          <span class="hero-card-info"><strong>Hinugtan Beach</strong></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="history">
+      <h2>History of Aklan</h2>
+      <p style="color: black;">
+        Aklan has a long history shaped by Indigenous communities, migration,
+        trade, and Spanish colonial rule. It was once part of Capiz. Republic
+        Act No. 1414 created the Province of Aklan on April 25, 1956.
+      </p>
+      <details class="see-more">
+        <summary>See more</summary>
+        <p style="color: black;">
+          The Ati-Atihan Festival is one of Aklan’s best-known cultural
+          celebrations. It honors the Santo Niño and is associated with local
+          traditions and stories about early communities on Panay.
+        </p>
+        <p style="color: black;">
+          The Code of Kalantiaw was once described as an ancient law code
+          connected to Batan, Aklan. The National Historical Commission of the
+          Philippines found it had no valid historical basis, so it should not
+          be treated as verified history.
+        </p>
+      </details>
+      <br>
+      <section id="map-section" class="map-section">
+        <div class="map-heading">
+          <div>
+            <p class="eyebrow">Find your way around</p>
+            <h2>Explore Aklan</h2>
+            <p class="section-intro">Explore Aklan’s provincial outline, town locations, and surrounding coast. Drag and
+              zoom to explore.</p>
+          </div>
+          <span class="map-compass" aria-hidden="true">N<br>↑</span>
+        </div>
+
+        <div class="map-layout">
+          <div id="aklan-map" role="application" aria-label="Interactive map of Aklan, Philippines"></div>
+
+          <div class="map-places">
+            <p class="map-list-title">Choose a place</p>
+            <button class="map-place active" type="button" data-lat="11.533" data-lng="122.483"
+              data-zoom="12"><span>01</span><strong>Altavas</strong><small>Coast and uplands</small></button>
+            <button class="map-place" type="button" data-lat="11.550" data-lng="122.383"
+              data-zoom="12"><span>02</span><strong>Balete</strong><small>Nature and heritage</small></button>
+            <button class="map-place" type="button" data-lat="11.633" data-lng="122.333"
+              data-zoom="12"><span>03</span><strong>Banga</strong><small>Manduyog Hill</small></button>
+            <button class="map-place" type="button" data-lat="11.583" data-lng="122.500"
+              data-zoom="12"><span>04</span><strong>Batan</strong><small>Beaches and coral</small></button>
+            <button class="map-place" type="button" data-lat="11.850" data-lng="121.900"
+              data-zoom="12"><span>05</span><strong>Buruanga</strong><small>Cliffs and beaches</small></button>
+            <button class="map-place" type="button" data-lat="11.817" data-lng="122.167"
+              data-zoom="12"><span>06</span><strong>Ibajay</strong><small>Mangroves and coast</small></button>
+            <button class="map-place" type="button" data-lat="11.700" data-lng="122.367"
+              data-zoom="12"><span>07</span><strong>Kalibo</strong><small>Provincial capital</small></button>
+            <button class="map-place" type="button" data-lat="11.667" data-lng="122.333"
+              data-zoom="13"><span>08</span><strong>Lezo</strong><small>Pottery and town life</small></button>
+            <button class="map-place" type="button" data-lat="11.483" data-lng="122.300"
+              data-zoom="12"><span>09</span><strong>Libacao</strong><small>Highlands and river</small></button>
+            <button class="map-place" type="button" data-lat="11.517" data-lng="122.300"
+              data-zoom="12"><span>10</span><strong>Madalag</strong><small>Mountains and waterfalls</small></button>
+            <button class="map-place" type="button" data-lat="11.700" data-lng="122.283"
+              data-zoom="12"><span>11</span><strong>Makato</strong><small>Festivals and heritage</small></button>
+            <button class="map-place" type="button" data-lat="11.900" data-lng="121.908"
+              data-zoom="11"><span>12</span><strong>Malay</strong><small>Boracay gateway</small></button>
+            <button class="map-place" type="button" data-lat="11.650" data-lng="122.300"
+              data-zoom="12"><span>13</span><strong>Malinao</strong><small>History and hills</small></button>
+            <button class="map-place" type="button" data-lat="11.833" data-lng="122.083"
+              data-zoom="12"><span>14</span><strong>Nabas</strong><small>Falls and coastline</small></button>
+            <button class="map-place" type="button" data-lat="11.650" data-lng="122.433"
+              data-zoom="12"><span>15</span><strong>New Washington</strong><small>Coastal communities</small></button>
+            <button class="map-place" type="button" data-lat="11.700" data-lng="122.333"
+              data-zoom="13"><span>16</span><strong>Numancia</strong><small>Near Kalibo</small></button>
+            <button class="map-place" type="button" data-lat="11.767" data-lng="122.250"
+              data-zoom="12"><span>17</span><strong>Tangalan</strong><small>Jawili Falls and coast</small></button>
+          </div>
+        </div>
+
+        <p class="map-attribution">Map data © OpenStreetMap contributors</p>
+      </section>
+    </section>
+
+    <section class="facts-section">
+      <h2>Aklan at a Glance</h2>
+      <p class="section-intro" style="color: black;">
+        A quick introduction to the province’s geography, communities, and traditions.
+      </p>
+      <dl class="facts-grid">
+        <div>
+          <dt>Region</dt>
+          <dd>Western Visayas</dd>
+        </div>
+        <div>
+          <dt>Island</dt>
+          <dd>Northwestern Panay</dd>
+        </div>
+        <div>
+          <dt>Capital</dt>
+          <dd>Kalibo</dd>
+        </div>
+        <div>
+          <dt>Municipalities</dt>
+          <dd>17</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section id="culture" class="culture-section">
+      <h2>Festivals and Events</h2>
+      <p class="section-intro" style="color: black;">Choose an event to see its picture and description.</p>
+      <div class="culture-layout">
+        <div class="culture-choices">
+          <button class="culture-choice active" type="button"
+            data-image="Getting_Lost_In_The_Music_At_Kalibo_Ati-Atihan_Festival,_Philippines.jpg"
+            data-alt="Kalibo Ati-Atihan Festival"
+            data-description="Kalibo’s Santo Niño Ati-Atihan features drumming, dancing, costumes, and community celebrations."
+            data-more="The festival is held in January and includes street dancing, processions, and religious events.">Kalibo
+            Ati-Atihan</button>
+          <button class="culture-choice" type="button" data-image="images/makato-ati-atihan.jpg"
+            data-alt="Makato Ati-Atihan Festival"
+            data-description="Makato celebrates its own Santo Niño Ati-Atihan with dancers, music, and religious activities."
+            data-more="This is one of several Ati-Atihan celebrations held in Aklan towns.">Makato Ati-Atihan</button>
+          <button class="culture-choice" type="button" data-image="images/batan-ati-ati-malakara.jpg"
+            data-alt="Batan Ati-Ati Malakara Festival"
+            data-description="Batan’s Ati-Ati Malakara is a local celebration honoring the Santo Niño."
+            data-more="Aklan also has Ati-Ati celebrations in other municipalities, including Ibajay.">Batan Ati-Ati
+            Malakara</button>
+          <button class="culture-choice" type="button" data-image="Aklan-Freedom-Shrine.jpg"
+            data-alt="XIX Martyrs of Aklan commemoration"
+            data-description="The commemoration remembers the XIX Martyrs of Aklan."
+            data-more="The martyrs are remembered for their role in the struggle for freedom. Their commemoration is held on March 23.">XIX
+            Martyrs of Aklan</button>
+          <button class="culture-choice" type="button" data-image="Aklan-History.png" data-alt="Aklan Day celebration"
+            data-description="Aklan Day celebrates the province’s founding anniversary on April 25."
+            data-more="The celebration marks Aklan becoming a separate province from Capiz in 1956.">Aklan Day</button>
+          <button class="culture-choice" type="button" data-image="PINA-EXHIBIT-TEASER-PHOTOSA7305120-1024x609.jpg"
+            data-alt="Aklan Piña and Fiber Festival"
+            data-description="The festival showcases Aklan’s weaving and fiber crafts."
+            data-more="Artisans feature piña fiber, abaca, raffia, and handloom weaving.">Piña and Fiber
+            Festival</button>
+          <button class="culture-choice" type="button" data-image="images.jpg" data-alt="Kalibo Higante Contest"
+            data-description="The Higante Contest features large, colorful figures made by local participants."
+            data-more="The figures may be made with papier-mâché, bamboo, and other local materials.">Higante
+            Contest</button>
+          <button class="culture-choice" type="button" data-image="images/bariw-festival.jpg"
+            data-alt="Bariw Festival in Nabas"
+            data-description="Nabas celebrates the skills of local makers who weave bariw leaves."
+            data-more="Bariw leaves are used to make items such as bags, mats, hats, and purses.">Bariw
+            Festival</button>
+          <button class="culture-choice" type="button" data-image="images/saguibin-festival.jpg"
+            data-alt="Saguibin Festival in Banga"
+            data-description="Banga’s Saguibin Festival celebrates community life and local traditions."
+            data-more="Festival activities and dates can change, so check with the local tourism office for current details.">Saguibin
+            Festival</button>
+          <button class="culture-choice" type="button" data-image="images/baesa-parada.jpg"
+            data-alt="Baesa Parada in Libacao"
+            data-description="Libacao’s Baesa Parada features decorated bamboo rafts along the Aklan River."
+            data-more="It is listed among Aklan’s annual community events.">Baesa Parada</button>
+        </div>
+
+        <div class="culture-display">
+          <img id="culture-image" src="Getting_Lost_In_The_Music_At_Kalibo_Ati-Atihan_Festival,_Philippines.jpg"
+            alt="Kalibo Ati-Atihan Festival" />
+          <h3 id="culture-title">Kalibo Ati-Atihan</h3>
+          <p id="culture-description">
+            Kalibo’s Santo Niño Ati-Atihan features drumming, dancing,
+            costumes, and community celebrations.
+          </p>
+          <details class="description-more">
+            <summary>See more</summary>
+            <p id="culture-more">
+              The festival is held in January and includes street dancing,
+              processions, and religious events.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="tourism">
+      <h2>Places to Explore</h2>
+      <p class="section-intro" style="color: black;">Search for Aklan places and attractions.</p>
+
+      <form class="spot-search" id="spot-search-form">
+        <input id="spot-search" type="search" placeholder="Try falls or Altavas">
+        <button type="submit">Search</button>
+      </form>
+
+      <p id="spot-count" class="spot-count" aria-live="polite">Showing all places</p>
+
+      <p id="spot-no-results" class="no-results" hidden>
+        Walang nahanap na lugar. Subukan ang ibang search.
+      </p>
+
+      <div class="story-grid" id="spot-list">
+        <h3 id="Altavas" class="spot-town-heading">Altavas</h3>
+
+        <article class="tourist-spot">
+          <img class="story-image" src="830938730_1416201810713081_8950433152591425532_n.png" alt="Tinagong Dagat">
+          <h3>Tinagong Dagat</h3>
+          <p>A coastal area shared by Altavas and Batan, fringed with mangroves and rocky shores.</p>
+        </article>
+
+        <article class="tourist-spot">
+          <img class="story-image" src="565799848_1112915741013314_5025862894416083127_n.jpg"
+            alt="Altavas Veterans Memorial Park">
+          <h3>Altavas Veterans Memorial Park</h3>
+          <p>A hilltop memorial park in Barangay Lumaynay, with views of the surrounding forest and Tinagong Dagat.</p>
+        </article>
+
+        <article class="tourist-spot" style="--spot-bg: url('485290423_9736245583073739_3699819125865684742_n.jpg')">
+          <img class="story-image" src="485290423_9736245583073739_3699819125865684742_n.jpg"
+            alt="Altavas Veterans Memorial Shrine" />
+
+          <p>
+            <a href="https://www.google.com/maps/place/Heneral+(General)+Ananias+Diokno+Memorial+Monument/data=!4m2!3m1!1s0x0:0xe98873e4efaf811e?sa=X&ved=1t:2428&ictx=111"
+              target="_blank" rel="noopener">⚲ General Ananias Diokno Shrine</a><br>
+          <h3>General Ananias Diokno Shrine</h3>
+          <p>A historical site in Barangay Dalipdip commemorating General Ananias Diokno. American forces captured him
+            in Altavas in 1901.
+          </p>
+
+        </article>
+
+        <article class="tourist-spot" style="--spot-bg: url('haha.jpg')">
+          <img class="story-image" src="haha.jpg" alt="Tinagong Dagat" />
+
+          <p>
+          <h3>Agtutoe-an Falls</h3>
+          <p> A waterfall in Barangay Talon. Its cool water and natural setting make it a local outing spot.
+          </p>
+        </article>
+
+        <article class="tourist-spot" style="--spot-bg: url('images (1).jpg')">
+          <img class="story-image" src="images (1).jpg" alt="Tinagong Dagat" />
+          <h3>Macawiwili Falls</h3>
+          <p>
+            A waterfall in Barangay Cabugao. It is one of Altavas’s natural attractions.
+          </p>
+        </article>
+
+        <article class="tourist-spot" style="--spot-bg: url('kipot.jpg')">
+          <img class="story-image" src="kipot.jpg" alt="Tinagong Dagat" />
+          <p>
+
+          <h3>Kipot Cave</h3>
+          <p> A cave in Barangay Talon; kipot means “narrow” in the local description. Check locally about access before
+            visiting. </p>
+        </article>
+        <h3 class="spot-town-heading" style="color: rgb(12, 101, 34); font-size: 2.5em; ">Balete</h3>
+
+
+        <article class="tourist-spot" style="--spot-bg: url('Agtawagon Hill.jpg')">
+          <img class="story-image" src="Agtawagon Hill.jpg" alt="Agtawagon Hill in Balete" />
+          <h3>Agtawagon Hill</h3>
+          <p>
+            It served as a camp and last line of defense for Filipino soldiers and
+            guerrillas during World War II. It’s a historical spot in Balete.
+          </p>
+        </article>
+
+        <article class="tourist-spot" style="--spot-bg: url('Basura Garden.jpg')">
+          <img class="story-image" src="Basura Garden.jpg" alt="Basura Garden in Balete" />
+          <h3>Basura Garden</h3>
+          <p>
+            This private garden displays art made from antiques and repurposed
+            materials. Check with the owner or local tourism office about visiting.
+          </p>
+        </article>
+
+        <article class="tourist-spot" style="--spot-bg: url('Kabuhi-an Center.jpg')">
+          <img class="story-image" src="Kabuhi-an Center.jpg" alt="Kabuhi-an Center in Balete" />
+          <h3>Kabuhi-an Center</h3>
+          <p>
+            The center supports skills training and showcases Aklanon products and
+            crafts. It promotes local livelihoods and handmade goods.
+          </p>
+        </article>
+
+
+        <h3 class="spot-town-heading" style="color: rgb(12, 101, 34); font-size: 2.5em; ">Banga</h3>
+
+        <article class="tourist-spot" style="--spot-bg: url('Manduyog Hill.jpg')">
+          <img class="story-image" src="Manduyog Hill.jpg" alt="Manduyog Hill" />
+          <h3>Manduyog Hill</h3>
+          <p>
+            The hill has life-size Stations of the Cross winding up its slope.
+            It overlooks the Aklan State University campus.
+          </p>
+        </article>
+
+
+
+
+        <h3 class="spot-town-heading" style="color: rgb(12, 101, 34); font-size: 2.5em; ">Batan</h3>
+
+
+        <article class="tourist-spot" style="--spot-bg: url('Ob-Ob Hill.jpg')">
+          <img class="story-image" src="Ob-Ob Hill.jpg" alt="Ob-Ob Hill" />
+          <h3>Ob-Ob Hill</h3>
+            <p>
+              This hill rises above the Sibuyan Sea and resembles a lighthouse.
+              A sandy beach lies below it.
+            </p>
+        </article>
+
+        <article class="tourist-spot" style="--spot-bg: url('Batan beaches and Coral Garden.jpg')">
+          <img class="story-image" src="Batan beaches and Coral Garden.jpg" alt="Batan beaches and coast" />
+          <h3>Batan beaches and Coral Garden</h3>
+          <p>
+              Batan’s coast includes beaches in Songcolan, Mandong, Napti, and Mambuquiao.
+            </p>
+         
+        </article>
+
+        <article class="tourist-spot" style="--spot-bg: url('Camanci Falls.jpg')">
+          <img class="story-image" src="Camanci Falls.jpg" alt="Camanci Falls" />
+          <h3>Camanci Falls</h3>
+            <p>
+              Camanci Falls is a natural water attraction in Batan.
+              Its surroundings offer a quiet place to enjoy the scenery.
+            </p>
+        </article>
+
+        <h3 class="spot-town-heading" style="color: rgb(12, 101, 34); font-size: 2.5em; ">Buruanga</h3>
+
+        <article class="tourist-spot" style="--spot-bg: url('Ingus-Ingus Hill.jpg')">
+          <img class="story-image" src="Ingus-Ingus Hill.jpg" alt="Ingus-Ingus Hill" />
+          <h3>Ingus-Ingus Hill</h3>
+          <p>It served as a coastal lookout during the Spanish era. A
+            cave lies beneath the hill.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Ashram Balay Pagduaw.jpg')">
+          <img class="story-image" src="Ashram Balay Pagduaw.jpg" alt="Ashram Balay Pagduaw" />
+          <h3>Ashram Balay Pagduaw</h3>
+          <p>This is a quiet place for meditation, reflection, and retreats. Visitors can spend time in its natural
+            setting.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: 
+url('Saint Anthony of Padua Parish Church.jpg')"><img class="story-image"
+            src="Saint Anthony of Padua Parish Church.jpg" alt="Saint Anthony of Padua Parish Church" />
+          <h3>Saint Anthony of Padua Parish Church</h3>
+          <p>This century-old church is an important place of worship in Buruanga. It is dedicated to Saint Anthony and
+            Nuestra Señora de Salvacion.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Ariel’s Point.jpg')">
+          <img class="story-image" src="Ariel’s Point.jpg" alt="Ariel’s Point" />
+          <h3>Ariel’s Point</h3>
+          <p>This coastal attraction is known for cliff diving and swimming spots. Visitors also come for snorkeling and
+            marine life.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Sabang Cave.jpg')">
+          <img class="story-image" src="Sabang Cave.jpg" alt="Sabang Cave" />
+          <h3>Sabang Cave</h3>
+          <p>This elevated cave offers views of nearby beaches and the sea. Check local access guidance before visiting.
+          </p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Sapsapon Cave.jpg')"><img class="story-image"
+            src="Sapsapon Cave.jpg" alt="Sapsapon Cave" />
+          <h3>Sapsapon Cave</h3>
+          <p>The cave contains stalagmites and stalactites formed over time. Ask locally about access and guided visits.
+          </p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Tigis Falls.jpg')"><img class="story-image"
+            src="Tigis Falls.jpg" alt="Tigis Falls" />
+          <h3>Tigis Falls</h3>
+          <p>Tigis Falls is a natural waterfall and swimming destination. Follow local safety guidance around the water.
+          </p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Talisay Beach..jpg')"><img class="story-image"
+            src="Talisay Beach..jpg" alt="Talisay Beach" />
+          <h3>Talisay Beach</h3>
+          <p>Talisay is a coastal beach known for clear water. Check sea and weather conditions before swimming.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Hinugtan White Beach.jpg')"><img class="story-image"
+            src="Hinugtan White Beach.jpg" alt="Hinugtan White Beach" />
+          <h3>Hinugtan White Beach</h3>
+          <p>Hinugtan is a beach destination for swimming and snorkeling. Its coastal setting is suited to a nature
+            visit.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Tuburan Baybay.jpg')"><img class="story-image"
+            src="Tuburan Baybay.jpg" alt="Tuburan Baybay" />
+          <h3>Tuburan Baybay</h3>
+          <p>Tuburan Baybay is a beach area for relaxing by the coast. Visitors can enjoy swimming and snorkeling.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Pagatpat Mangrove.jpg')"><img class="story-image"
+            src="Pagatpat Mangrove.jpg" alt="Pagatpat Mangrove" />
+          <h3>Pagatpat Mangrove</h3>
+          <p>This mangrove area has a boardwalk through coastal greenery. It offers a calm place to explore the local
+            environment.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Hacienda Maria.jpg')"><img class="story-image"
+            src="Hacienda Maria.jpg" alt="Hacienda Maria" />
+          <h3>Hacienda Maria</h3>
+          <p>Hacienda Maria is a nature destination with caves and waterfalls. Local visits may include seeing how
+            lambanog is made.</p>
+        </article>
+
+        <h3 class="spot-town-heading" style="color: rgb(12, 101, 34); font-size: 2.5em; ">Ibajay</h3>
+
+        <article class="tourist-spot" style="--spot-bg: url('Katunggan it Ibajayjpg')"><img class="story-image"
+            src="Katunggan it Ibajay.jpg" alt="Katunggan it Ibajay" />
+          <h3>Katunggan it Ibajay</h3>
+          <p>This mangrove area is known for its variety of mangrove species. It is also used for mangrove and
+            aquaculture research.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Campo Verde.jpg')"><img class="story-image"
+            src="Campo Verde.jpg" alt="Campo Verde" />
+          <h3>Campo Verde</h3>
+          <p>Campo Verde is a forested highland area along the Ibajay-Tangalan border. Its wooded trails attract hikers.
+          </p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Ibajay Beach.jpg')"><img class="story-image"
+            src="Ibajay Beach.jpg" alt="Ibajay Beach" />
+          <h3>Ibajay Beach</h3>
+          <p>This shoreline stretches across several coastal barangays. It is a local place for picnics and swimming.
+          </p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Ibajay River.jpg')"><img class="story-image"
+            src="Ibajay River.jpg" alt="Ibajay River" />
+          <h3>Ibajay River</h3>
+          <p>The river runs from upland barangays toward the coast. Its rapids and boulders draw water-sports and
+            rafting enthusiasts.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Snibaa Falls.jpg')"><img class="story-image"
+            src="Snibaa Falls.jpg" alt="Snibaa Falls" />
+          <h3>Snibaa Falls</h3>
+          <p>Snibaa Falls is reached by a short hike through the mountains. Its cool water makes a refreshing stop after
+            exploring.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Alejandro Melchor’s Birthplace.jpg')"><img
+            class="story-image" src="Alejandro Melchor’s Birthplace.jpg" alt="Alejandro Melchor’s birthplace" />
+          <h3>Alejandro Melchor’s Birthplace</h3>
+          <p>Ibajay is the birthplace of engineer Alejandro Melchor. He is remembered for his work on military pontoon
+            bridges during World War II.</p>
+        </article>
+
+        <h3 class="spot-town-heading" style="color: rgb(12, 101, 34); font-size: 2.5em; ">Kalibo</h3>
+
+        <article class="tourist-spot" style="--spot-bg: url('Aklan Freedom Shrine.jpg')"><img class="story-image"
+            src="Aklan Freedom Shrine.jpg" alt="Aklan Freedom Shrine" />
+          <h3>Aklan Freedom Shrine</h3>
+          <p>The shrine honors the XIX Martyrs of Aklan. It is a memorial site in Kalibo.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Tigayon Hill and Caves.jpg')"><img class="story-image"
+            src="Tigayon Hill and Caves.jpg" alt="Tigayon Hill and Caves" />
+          <h3>Tigayon Hill and Caves</h3>
+          <p>Tigayon Hill is a hiking spot with caves and local history. The trail offers views of the surrounding area.
+          </p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Museo it Akean.webp')"><img class="story-image"
+            src="Museo it Akean.webp" alt="Museo it Akean" />
+          <h3>Museo it Akean</h3>
+          <p>This museum displays artifacts and items connected to Aklanon culture. It is a place to learn about Aklan’s
+            heritage.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Pina.jpg')"><img class="story-image" src="Pina.jpg"
+            alt="Piña Village" />
+          <h3>Piña Village</h3>
+          <p>Visitors can see how pineapple fibers are turned into piña cloth. The village is in Barangay New Buswang.
+          </p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Kalibo Cathedral.jpg')"><img class="story-image"
+            src="Kalibo Cathedral.jpg" alt="Kalibo Cathedral" />
+          <h3>Kalibo Cathedral</h3>
+          <p>The cathedral is one of the province’s historic churches. It remains an important place of worship in
+            Kalibo.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Bakhawan Eco-Park.jpg')"><img class="story-image"
+            src="Bakhawan Eco-Park.jpg" alt="Bakhawan Eco-Park" />
+          <h3>Bakhawan Eco-Park</h3>
+          <p>This mangrove eco-park has an elevated walkway through the forest. Visitors can also enjoy nature walks and
+            kayaking.</p>
+        </article>
+
+        <h3 class="spot-town-heading" style="color: rgb(12, 101, 34); font-size: 2.5em; ">Lezo</h3>
+
+        <article class="tourist-spot" style="--spot-bg: url('Lezo Plaza.jpg')"><img class="story-image"
+            src="Lezo Plaza.jpg" alt="Lezo Plaza" />
+          <h3>Lezo Plaza</h3>
+          <p>The plaza is a central gathering place for community events. Sports courts and municipal buildings are
+            nearby.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Lezo Church.jpg')"><img class="story-image"
+            src="Lezo Church.jpg" alt="Lezo Church" />
+          <h3>Lezo Church</h3>
+          <p>This historic church stands near the town plaza. It remains part of the town’s religious and community
+            life.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Lezo Pottery.jpg')"><img class="story-image"
+            src="Lezo Pottery.jpg" alt="Lezo Pottery" />
+          <h3>Bayangan Village</h3>
+          <p>Local potters make clay pots and jars using traditional methods. Ask local makers about seeing the craft.
+          </p>
+        </article>
+        
+
+        <h3 class="spot-town-heading" style="color: rgb(12, 101, 34); font-size: 2.5em; ">Libacao</h3>
+
+        <article class="tourist-spot" style="--spot-bg: url('Taroytoy.jpg')"><img class="story-image"
+            src="Taroytoy.jpg" alt="Taroytoy" />
+          <h3>Taroytoy</h3>
+          <p>Taroytoy is a forested upland area with cooler weather and hilly terrain. Reaching it involves a long hike
+            from Manika.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('The Wild River.jpg')"><img class="story-image"
+            src="The Wild River.jpg" alt="The Wild River" />
+          <h3>The Wild River</h3>
+          <p>The upstream Aklan River is known for clear water and a rugged setting. Local activities may include
+            rafting and kayaking.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Libacao Waterfalls.webp')"><img class="story-image"
+            src="Libacao Waterfalls.webp" alt="Libacao waterfalls" />
+          <h3>Nasoraan Waterfalls</h3>
+          <p>Libacao has waterfalls in its upland areas. Ask local guides about routes and current access before setting
+            out.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Libacao Inland Trek.jpg')"><img class="story-image"
+            src="Libacao Inland Trek.jpg" alt="Libacao inland trek" />
+          <h3>Inland Adventure Trek</h3>
+          <p>This trek follows the river upstream from Manika toward Oyang. Plan the hike with local guidance.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Libacao Mountaineering Trails.jpg')"><img
+            class="story-image" src="Libacao Mountaineering Trails.jpg" alt="Libacao mountain trail" />
+          <h3>Mountaineering Trails</h3>
+          <p>Local routes lead toward Taroytoy, Mount Nausan, and Mount Nangtud. These hikes require preparation and a
+            local guide.</p>
+        </article>
+
+        <h3 class="spot-town-heading" style="color: rgb(12, 101, 34); font-size: 2.5em; ">Madalag</h3>
+
+        <article class="tourist-spot" style="--spot-bg: url('Liktinon White Rocks.jpg')"><img
+            class="story-image" src="Liktinon White Rocks.jpg" alt="Liktinon White Rocks" />
+          <h3>Liktinon White Rocks</h3>
+          <p>These pale boulders and rock pools lie along the Timbaban River. The area is surrounded by a forested
+            valley.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Panipiason Hanging Bridge.jpg')"><img
+            class="story-image" src="Panipiason Hanging Bridge.jpg" alt="Panipiason Hanging Bridge" />
+          <h3>Panipiason Hanging Bridge</h3>
+          <p>The bridge crosses a scenic upland area in Panipiason. It is a popular stop for visitors exploring the
+            countryside.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Agtughangin Falls.jpg')"><img class="story-image"
+            src="Agtughangin Falls.jpg" alt="Agtughangin Falls" />
+          <h3>Agtughangin Falls</h3>
+          <p>Agtughangin Falls is a cold-water waterfall in Panipiason. Forest scenery surrounds the falls.</p>
+        </article>
+
+        <h3 class="spot-town-heading" style="color: rgb(12, 101, 34); font-size: 2.5em; ">Makato</h3>
+
+        <article class="tourist-spot" style="--spot-bg: url('Aklan Sports Complex.jpg')"><img class="story-image"
+            src="Aklan Sports Complex.jpg" alt="Aklan Sports Complex" />
+          <h3>Aklan Sports Complex</h3>
+          <p>The complex has a track and field oval, swimming pool, and other sports facilities. It is located in
+            Makato.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Salimuno Falls.jpg')"><img class="story-image"
+            src="Salimuno Falls.jpg" alt="Salimuno Falls" />
+          <h3>Salimuno Falls</h3>
+          <p>Salimuno Falls is in Barangay Libang, several kilometers from the town center. Its clear water makes it a
+            local nature stop.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Baybay Beach.jpg')"><img class="story-image"
+            src="Baybay Beach.jpg" alt="Baybay Beach in Makato" />
+          <h3>Baybay Beach</h3>
+          <p>Baybay Beach is a coastal destination in Makato. Check local access and travel guidance before visiting.
+          </p>
+        </article>
+        
+
+        <h3 class="spot-town-heading" style="color: rgb(12, 101, 34); font-size: 2.5em; ">Malay</h3>
+
+        <article class="tourist-spot" style="--spot-bg: url('Malay Ecological Park.jpg')"><img
+            class="story-image" src="Malay Ecological Park.jpg" alt="Malay Ecological Park" />
+          <h3>Malay Ecological Park</h3>
+          <p>The park in Barangay Argao has fruit trees and a butterfly farm. It also offers views toward Boracay
+            Island.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Pangihan Cave.jpg')"><img class="story-image"
+            src="Pangihan Cave.jpg" alt="Pangihan Cave" />
+          <h3>Pangihan Cave</h3>
+          <p>Pangihan Cave has several connected chambers. Check with local guides about access before visiting.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Bat Caves.jpg')"><img class="story-image"
+            src="Bat Caves.jpg" alt="Bat caves in Malay" />
+          <h3>Bat Caves</h3>
+          <p>These caves are home to fruit-eating bats and are reached by hiking or biking. Local volunteers can guide
+            visitors.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Preserved Dead Forest.jpg')"><img
+            class="story-image" src="Preserved Dead Forest.jpg" alt="Preserved Dead Forest" />
+          <h3>Preserved Dead Forest</h3>
+          <p>This inland water area contains clusters of standing dead tree trunks. It offers an unusual natural
+            landscape to view.</p>
+        </article>
+
+        <h3 class="spot-town-heading" style="color: rgb(12, 101, 34); font-size: 2.5em; ">Malinao</h3>
+
+        <article class="tourist-spot" style="--spot-bg: url('Candido Iban Monument.jpg')"><img
+            class="story-image" src="Candido Iban Monument.jpg" alt="Candido Iban Monument" />
+          <h3>Candido Iban Monument</h3>
+          <p>The monument honors Candido Iban, a Katipunero and one of the XIX Martyrs of Aklan. It is in his home
+            municipality of Malinao.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Fatima Hill.jpg')"><img class="story-image"
+            src="Fatima Hill.jpg" alt="Fatima Hill" />
+          <h3>Fatima Hill</h3>
+          <p>Fatima Hill has Stations of the Cross along its slope and a chapel at the top. It can be reached by local
+            transport.</p>
+        </article>
+         <article class="tourist-spot" style="--spot-bg: url('Taeangban Hill.jpg')"><img class="story-image"
+            src="Taeangban Hill.jpg" alt="Taeangban Hill" />
+          <h3>Taeangban Hill</h3>
+          <p>Taeangban Hill is located in Barangay Dangcalan. Just like Fatima Hills it also has Stations of the Cross along its slope. The top can be reached by motorcycle, walking, or other local
+            transport.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Manomong Falls.jpg')"><img class="story-image"
+            src="Manomong Falls.jpg" alt="Manomong Falls" />
+          <h3>Mampahon Falls</h3>
+          <p>Manomong Falls is a waterfall in Barangay Tigpalas. Reaching it involves a hike upstream.</p>
+        </article>
+
+        <h3 class="spot-town-heading" style="color: rgb(12, 101, 34); font-size: 2.5em; ">Nabas</h3>
+
+        <article class="tourist-spot" style="--spot-bg: url('Laserna Cold Springs.jpg')"><img class="story-image"
+            src="Laserna Cold Springs.jpg" alt="Laserna Cold Springs" />
+          <h3>Bungan-bungan Cold Springs</h3>
+          <p>These cold springs are known for clear water flowing around large rock formations. They are popular for
+            swimming in warm weather.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Basang Cave.jpg')"><img class="story-image"
+            src="Basang Cave.jpg" alt="Basang Cave" />
+          <h3>Basang Cave</h3>
+          <p>Basang Cave is a long cave near Barangay Poblacion. Ask locally about access and whether a guide is needed.
+          </p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Tagororoc Ecotourism Destination.jpg')"><img class="story-image"
+            src="Tagororoc Ecotourism Destination.jpg" alt="Tagororoc Ecotourism Destination" />
+          <h3>Tagororoc Ecotourism Destination</h3>
+          <p>Tagororoc is a nature destination with rivers, water basins, and waterfalls. It is suited to visitors
+            looking for an outdoor trip.</p>
+        </article>
+
+        <h3 class="spot-town-heading" style="color: rgb(12, 101, 34); font-size: 2.5em; ">New Washington</h3>
+
+        <article class="tourist-spot" style="--spot-bg: url('Tambak Sea Wall.jpg')"><img class="story-image"
+            src="Tambak Sea Wall.jpg" alt="Tambak Sea Wall" />
+          <h3>Tambak Sea Wall</h3>
+          <p>The seawall is a spot for watching the sunrise along the coast. Nearby restaurants serve local seafood.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Pink Sisters Convent.jpg')"><img class="story-image"
+            src="Pink Sisters Convent.jpg" alt="Pink Sisters Convent" />
+          <h3>Pink Sisters Convent</h3>
+          <p>The convent is in Barangay Polo. It is a religious destination visited by local devotees.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Jaime L. Sin Monument.jpg')"><img class="story-image"
+            src="Jaime L. Sin Monument.jpg" alt="Jaime L. Sin Monument" />
+          <h3>Jaime L. Sin Monument</h3>
+          <p>This monument honors Cardinal Jaime L. Sin, who was born in New Washington. The bronze statue is in his
+            hometown.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Isla Kapispisan.jpg')"><img class="story-image"
+            src="Isla Kapispisan.jpg" alt="Isla Kapispisan" />
+          <h3>Isla Kapispisan</h3>
+          <p>This mangrove area is a habitat for birds and aquatic life. It is associated with local conservation
+            efforts.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Lagatik River Cruise.jpg')"><img class="story-image"
+            src="Lagatik River Cruise.jpg" alt="Lagatik River Cruise" />
+          <h3>Lagatik River Cruise</h3>
+          <p>The cruise follows the scenic Lagatik River and nearby coastal areas. Tours may include mangroves and local
+            fish or oyster farms.</p>
+        </article>
+
+        <h3 class="spot-town-heading" style="color: rgb(12, 101, 34); font-size: 2.5em; ">Numancia</h3>
+
+        <article class="tourist-spot" style="--spot-bg: url('Century-Old Acacia Tree.jpg')"><img
+            class="story-image" src="Century-Old Acacia Tree.jpg" alt="Century-old acacia trees in Numancia" />
+          <h3>Century-Old Acacia Trees</h3>
+          <p>A cluster of old acacia trees stands at Albasan Elementary School. The trees were planted in 1892.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Camanci Beach.jpg')"><img class="story-image"
+            src="Camanci Beach.jpg" alt="Camanci Beach" />
+          <h3>Camanci Beach</h3>
+          <p>Camanci is one of Numancia’s coastal barangays with beach areas. Check locally for access and swimming
+            conditions.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Navitas Beach.jpg')"><img class="story-image"
+            src="Navitas Beach.jpg" alt="Navitas Beach" />
+          <h3>Navitas Beach</h3>
+          <p>Navitas is another coastal barangay in Numancia with beach areas. Follow local guidance when visiting.</p>
+        </article>
+
+        <h3 class="spot-town-heading" style="color: rgb(12, 101, 34); font-size: 2.5em; ">Tangalan</h3>
+
+        <article class="tourist-spot" style="--spot-bg: url('Jawili Falls.jpg')"><img
+            class="story-image" src="Jawili Falls.jpg" alt="Jawili Falls" />
+          <h3>Jawili Falls</h3>
+          <p>Jawili Falls is a series of natural pools and cascades in Tangalan. Follow local safety guidance around the
+            water.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Marine Sanctuary and Coral Garden.jpg')"><img
+            class="story-image" src="Marine Sanctuary and Coral Garden.jpg"
+            alt=" Marine Sanctuary and Coral Garden" />
+          <h3>Marine Sanctuary and Coral Garden</h3>
+          <p>This protected coastal area supports coral and marine life. Ask locally about snorkeling access and
+            conservation rules.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Afga Point.jpg')"><img class="story-image"
+            src="Afga Point.jpg" alt="Afga Point" />
+          <h3>Afga Point</h3>
+          <p>Afga Point is a coastal attraction in Tangalan. It offers a scenic place to enjoy the shoreline.</p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Campo Verde.jpg')"><img class="story-image"
+            src="Campo Verde.jpg" alt="Campo Verde" />
+          <h3>Campo Verde</h3>
+          <p>Campo Verde is a forested highland area shared by Tangalan and Ibajay. Its wooded setting attracts hikers.
+          </p>
+        </article>
+        <article class="tourist-spot" style="--spot-bg: url('Bughawi Beach.jpg')"><img class="story-image"
+            src="Bughawi Beach.jpg" alt="Bughawi Beach" />
+          <h3>Bughawi Beach</h3>
+          <p>Bughawi is one of Tangalan’s coastal beaches. Check local conditions before swimming.</p>
+        </article>
+        
+
+        <p id="spot-no-results" class="no-results" hidden>
+          No tourist spots match your search.
+        </p>
+    </section>
+
+    <section>
+      <h2>Travel with Care</h2>
+      <ul class="travel-list" style="color: black;">
+        <li>Check current travel guidance with official tourism offices before setting out.</li>
+        <li>Follow local instructions at beaches, waterfalls, marine areas, and heritage sites.</li>
+        <li>Support local guides, makers, and businesses, and ask before photographing people or cultural activities.
+        </li>
+        <li>Take litter with you and help protect the coast, rivers, and upland environments.</li>
+      </ul>
+    </section>
+
+
+    <section id="towns">
+      <h2>Aklan’s Municipalities</h2>
+
+      <form class="municipality-search" id="town-search-form">
+        <label for="town-search">Find a municipality</label>
+        <div class="town-search-controls">
+          <input id="town-search" type="search" placeholder="Try Kalibo or Malay" autocomplete="off" />
+          <button type="submit">Search</button>
+        </div>
+        <p id="town-count" aria-live="polite" style="color: black;">Showing all 17 municipalities</p>
+      </form>
+
+      <article class="town-card" style="--town-logo: url('43c638f208d4481eab4018e6d10a5777-removebg-preview.png')">
+        <h3>Altavas</h3>
+        <details class="see-more">
+          <summary>See more . . .</summary>
+          <p>
+            Altavas is known for its coastal and upland scenery, including
+            Tinagong Dagat, waterfalls, and caves. The town also commemorates
+            General Ananias Diokno, who was captured there during the
+            Philippine-American War.
+          </p>
+
+          <iframe class="map" title="Map of Altavas, Aklan"
+            src="https://www.google.com/maps?q=Altavas,+Aklan&output=embed" loading="lazy"></iframe>
+          <h4>Geography</h4>
+          <p>Altavas is about 41 kilometers from Kalibo, the provincial capital, and about 45 kilometers from Roxas
+            City.</p>
+          <p>According to the Philippine Statistics Authority, the municipality has a land area of 109.05 square
+            kilometers.</p>
+          <h4>Barangays</h4>
+          <ul>
+            <li>Cabangila</li>
+            <li>Cabugao</li>
+            <li>Catmon</li>
+            <li>Dalipdip</li>
+            <li>Ginictan</li>
+            <li>Linayasan</li>
+            <li>Lumaynay</li>
+            <li>Lupo</li>
+            <li>Man-up</li>
+            <li>Odiong</li>
+            <li>Poblacion</li>
+            <li>Quinasay-an</li>
+            <li>Talon</li>
+            <li>Tibiao</li>
+          </ul>
+          <a href="#Altavas">Tourist Spots in Altavas...</a>
+          <p><a class="nav" href="https://altavasaklan.gov.ph/" target="_blank" rel="noopener">Learn more about
+              Altavas...</a></p>
+        </details>
+      </article>
+
+      <article class="town-card" style="--town-logo: url('BALETE_AKLAN_SEAL-removebg-preview.png')">
+        <h3>Balete</h3>
+        <details class="see-more">
+          <summary>See more . . .</summary>
+          <p>Balete celebrates local
+            arts and traditions through events such as Kultura Balete. Agtawagon Hill is
+            remembered as a wartime camp and defensive position.</p>
+
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125100.94285512673!2d122.29363101936501!3d11.522816612162222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a581bfbcd54cf5%3A0x461841cad1ba0f89!2sBalete%2C%20Aklan!5e0!3m2!1sen!2sph!4v1794784978124!5m2!1sen!2sph"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <h4>Geography</h4>
+          <p>The municipality has a land area of 118.93 square kilometers or 45.92 square miles which constitutes 6.76%
+            of Aklan's total area. Its population as determined by the 2020 Census was 30,090. This represented 4.89% of
+            the total population of Aklan province, or 0.38% of the overall population of the Western Visayas region.
+            Based on these figures, the population density is computed at 253 inhabitants per square kilometer or 655
+            inhabitants per square mile.</p>
+          <h4>Barangays</h4>
+          <ul>
+            <li>Aranas</li>
+            <li>Arcangel</li>
+            <li>Calizo</li>
+            <li>Cortes</li>
+            <li>Feliciano</li>
+            <li>Fulgencio</li>
+            <li>Guanko</li>
+            <li>Morales</li>
+            <li>Oquendo</li>
+            <li>Poblacion</li>
+          </ul>
+          <a href="#Balete">Tourist Spots in Balete...</a>
+          <p><a class="nav" href="https://aklan.gov.ph/atlas/atlas-balete/" target="_blank" rel="noopener">Learn more
+              about Balete...</a></p>
+        </details>
+      </article>
+      <article class="town-card" style="--town-logo: url('banga.png')">
+        <h3>Banga</h3>
+        <details class="see-more">
+          <summary>See more . . .</summary>
+          <p>Banga is known for Manduyog Hill and
+            the Aklan State University campus. Its Saguibin Festival celebrates cooperation,
+            while Pag-Aeaw-Aeaw remembers residents killed during World War II.</p>
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125066.68831681849!2d122.24885632019375!3d11.599519143150236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a57841d823de91%3A0xf1d05f9107b67c1f!2sBanga%2C%20Aklan!5e0!3m2!1sen!2sph!4v1794785701468!5m2!1sen!2sph"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <h4>Geography</h4>
+          <p>The municipality has a land area of 84.53
+            square kilometers or 32.64 square miles which
+            constitutes 4.80% of Aklan's total area. Its
+            population as determined by the 2020 Census was
+            40,318. This represented 6.55% of the total population
+            of Aklan province, or 0.51% of the overall population
+            of the Western Visayas region. Based on these figures,
+            the population density is computed at 477 inhabitants
+            per square kilometer or 1,235 inhabitants per square mile.
+            Barangays</p>
+          <h4>Barangays</h4>
+          <ul>
+            <li>Agbanawan</li>
+            <li>Bacan</li>
+            <li>Badiangan</li>
+            <li>Cerrudo</li>
+            <li>Cupang</li>
+            <li>Daguitan</li>
+            <li>Daja Norte</li>
+            <li>Daja Sur</li>
+            <li>Dingle</li>
+            <li>Jumarap</li>
+            <li>Lapnag</li>
+            <li>Libas</li>
+            <li>Linabuan Sur</li>
+            <li>Mambog</li>
+            <li>Mangan</li>
+            <li>Muguing</li>
+            <li>Pagsanghan</li>
+            <li>Palale</li>
+            <li>Poblacion</li>
+            <li>Polo</li>
+            <li>Polocate</li>
+            <li>San Isidro</li>
+            <li>Sibalew</li>
+            <li>Sigcay</li>
+            <li>Taba-ao</li>
+            <li>Tabayon</li>
+            <li>Tinapuay</li>
+            <li>Torralba</li>
+            <li>Ugsod</li>
+            <li>Venturanza</li>
+          </ul>
+          <a href="#Banga">Tourist Spots in Banga...</a>
+          <p><a class="nav" href="https://bangaaklan.gov.ph/" target="_blank" rel="noopener">Learn more about
+              Banga...</a></p>
+        </details>
+      </article>
+
+      <article class="town-card" style="--town-logo: url('batan.png')">
+        <h3>Batan</h3>
+        <details class="see-more">
+          <summary>See more . . .</summary>
+          <p>Batan is a coastal town known for beaches, marine
+            habitats, and its historic port. Its Ati-Ati Malakara Festival
+            honors the Santo Niño.</p>
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125080.34033810107!2d122.47617504999998!3d11.569009750000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a58426f46e591b%3A0x6044de5cb4239c91!2sBatan%2C%20Aklan!5e0!3m2!1sen!2sph!4v1794806223645!5m2!1sen!2sph"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <h4>Geography</h4>
+          <p>The municipality has a land area of 79.22 square kilometers or 30.59 square miles which constitutes 4.50%
+            of Aklan's total area. Its population as determined by the 2020 Census was 33,484. This represented 5.44% of
+            the total population of Aklan province, or 0.42% of the overall population of the Western Visayas region.
+            Based on these figures, the population density is computed at 423 inhabitants per square kilometer or 1,095
+            inhabitants per square mile.
+
+          </p>
+          <h4>Barangays</h4>
+          <ul>
+            <li>Ambolong</li>
+            <li>Angas</li>
+            <li>Bay-ang</li>
+            <li>Cabugao</li>
+            <li>Camaligan</li>
+            <li>Camanci</li>
+            <li>Canacaba</li>
+            <li>Songcolan</li>
+          </ul>
+          <a href="#Batan">Tourist Spots in Batan...</a>
+          <p><a class="nav" href="https://batan-aklan.gov.ph/" target="_blank" rel="noopener">Learn more about
+              Banga...</a></p>
+        </details>
+      </article>
+      </article>
+
+      <article class="town-card" style="--town-logo: url('buruanga.png')">
+        <h3>Buruanga</h3>
+        <details class="see-more">
+          <summary>See more . . .</summary>
+          <p>Buruanga lies at Aklan’s western end. Its
+            forested hills, rugged coastline, and quiet natural setting
+            shape the town’s character.</p>
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124962.83414255352!2d121.9234597!3d11.82907065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a5411f89b2c3c1%3A0x6f788137925f369b!2sBuruanga%2C%20Aklan!5e0!3m2!1sen!2sph!4v1794806414537!5m2!1sen!2sph"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <h4>Geography</h4>
+          <p>The municipality has a land area of 56.44 square kilometers or 21.79 square miles which constitutes 3.21%
+            of Aklan's total area. Its population as determined by the 2020 Census was 19,357. This represented 3.15% of
+            the total population of Aklan province, or 0.24% of the overall population of the Western Visayas region.
+            Based on these figures, the population density is computed at 343 inhabitants per square kilometer or 888
+            inhabitants per square mile.
+
+          </p>
+          <h4>Barangays</h4>
+          <ul>
+            <li>Alegria</li>
+            <li>Bagongbayan</li>
+            <li>Balusbos</li>
+            <li>Bel-is</li>
+            <li>Cabugan</li>
+            <li>El Progreso</li>
+            <li>Habana</li>
+            <li>Katipunan</li>
+            <li>Mayapay</li>
+            <li>Nazareth</li>
+            <li>Panilongan</li>
+            <li>Poblacion</li>
+            <li>Santander</li>
+            <li>Tag-osip</li>
+            <li>Tigum</li>
+          </ul>
+          <a href="#Buruanga">Tourist Spots in Buruanga...</a>
+          <p><a class="nav" href="https://aklan.gov.ph/tourism/buruanga/" target="_blank" rel="noopener">Learn more
+              about Buruanga...</a></p>
+        </details>
+      </article>
+
+      <article class="town-card" style="--town-logo: url('ibajay.png')">
+        <h3>Ibajay</h3>
+        <details class="see-more">
+          <summary>See more . . .</summary>
+          <p>Ibajay is known for mangroves, rivers, nito
+            handicrafts, and beaches. It is also the birthplace of engineer Alejandro Melchor, known for his work on
+            pontoon bridges during World War II.</p>
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125007.58642118712!2d122.15894545!3d11.730696649999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a56e30f4ed8007%3A0x2c51a88518cd2914!2sIbajay%2C%20Aklan!5e0!3m2!1sen!2sph!4v1794806617155!5m2!1sen!2sph"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <h4>Geography</h4>
+          <p>The municipality has a land area of 158.90 square kilometers or 61.35 square miles which constitutes 9.03%
+            of Aklan's total area. Its population as determined by the 2020 Census was 52,364. This represented 8.51% of
+            the total population of Aklan province, or 0.66% of the overall population of the Western Visayas region.
+            Based on these figures, the population density is computed at 330 inhabitants per square kilometer or 854
+            inhabitants per square mile.
+
+          </p>
+          <h4>Barangays</h4>
+          <ul>
+            <li>Agbago</li>
+            <li>Agdugayan</li>
+            <li>Antipolo</li>
+            <li>Aparicio</li>
+            <li>Aquino</li>
+            <li>Aslum</li>
+            <li>Bagacay</li>
+            <li>Batuan</li>
+            <li>Buenavista</li>
+            <li>Bugtongbato</li>
+            <li>Cabugao</li>
+            <li>Capilijan</li>
+            <li>Colongcolong</li>
+            <li>Laguinbanwa</li>
+            <li>Mabusao</li>
+            <li>Malindog</li>
+            <li>Maloco</li>
+            <li>Mina-a</li>
+            <li>Monlaque</li>
+            <li>Naile</li>
+            <li>Naisud</li>
+            <li>Naligusan</li>
+            <li>Ondoy</li>
+            <li>Poblacion</li>
+            <li>Polo</li>
+            <li>Regador</li>
+            <li>Rivera</li>
+            <li>Rizal</li>
+            <li>San Isidro</li>
+            <li>San Jose</li>
+            <li>Sta. Cruz</li>
+            <li>Tagbaya</li>
+            <li>Tul-ang</li>
+            <li>Unat</li>
+            <li>Yawan</li>
+          </ul>
+          <a href="#Ibajay">Tourist Spots in Ibajay...</a>
+          <p><a class="nav" href="https://aklan.gov.ph/tourism/ibajay/" target="_blank" rel="noopener">Learn more about
+              Ibajay...</a></p>
+        </details>
+      </article>
+
+      <article class="town-card" style="--town-logo: url('kalibo.png')">
+        <h3>Kalibo</h3>
+        <details class="see-more">
+          <summary>See more . . .</summary>
+          <p>Kalibo is the capital of Aklan and a cultural center.
+            Its best-known celebration is the Santo Niño Ati-Atihan Festival, featuring street dancing, drums, and
+            colorful costumes.</p>
+
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62511.23970784476!2d122.37593235000001!3d11.697778149999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a59d9b5127e72f%3A0x8b900226bce4b577!2sKalibo%2C%20Aklan!5e0!3m2!1sen!2sph!4v1794806793796!5m2!1sen!2sph"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <h4>Geography</h4>
+          <p>The municipality has a land area of 50.75 square kilometers or 19.59 square miles which constitutes 2.88%
+            of Aklan's total area. Its population as determined by the 2020 Census was 89,127. This represented 14.48%
+            of the total population of Aklan province, or 1.12% of the overall population of the Western Visayas region.
+            Based on these figures, the population density is computed at 1,756 inhabitants per square kilometer or
+            4,550 inhabitants per square mile.
+
+          </p>
+          <h4>Barangays</h4>
+          <ul>
+            <li>Andagaw</li>
+            <li>Bachaw Norte</li>
+            <li>Bachaw Sur</li>
+            <li>Briones</li>
+            <li>Buswang New</li>
+            <li>Buswang Old</li>
+            <li>Caano</li>
+            <li>Estancia</li>
+            <li>Linabuan Norte</li>
+            <li>Mabilo</li>
+            <li>Mobo</li>
+            <li>Nalook</li>
+            <li>Poblacion</li>
+            <li>Pook</li>
+            <li>Tigayon</li>
+            <li>Tinigaw</li>
+          </ul>
+          <a href="#Kalibo">Tourist Spots in Kalibo...</a>
+          <p><a class="nav" href="https://kaliboaklan.gov.ph/" target="_blank" rel="noopener">Learn more about
+              Kalibo...</a></p>
+        </details>
+      </article>
+
+      <article class="town-card" style="--town-logo: url('lezo.png')">
+        <h3>Lezo</h3>
+        <details class="see-more">
+          <summary>See more . . .</summary>
+          <p>Lezo is known for its pottery tradition. Its Bayangan Festival
+            celebrates the potter’s wheel, local crafts, and community heritage.</p>
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31257.686877841094!2d122.31351835!3d11.679463400000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a5779c3aa175d5%3A0xc4141e20c666ede6!2sLezo%2C%20Aklan!5e0!3m2!1sen!2sph!4v1794807021129!5m2!1sen!2sph"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <h4>Geography</h4>
+          <p>The municipality has a land area of 23.40 square kilometers or 9.03 square miles which constitutes 1.33% of
+            Aklan's total area. Its population as determined by the 2020 Census was 15,639. This represented 2.54% of
+            the total population of Aklan province, or 0.20% of the overall population of the Western Visayas region.
+            Based on these figures, the population density is computed at 668 inhabitants per square kilometer or 1,732
+            inhabitants per square mile.
+
+          </p>
+          <h4>Barangays</h4>
+          <ul>
+            <li>Agcawilan</li>
+            <li>Bagto</li>
+            <li>Bugasongan</li>
+            <li>Carugdog</li>
+            <li>Cogon</li>
+            <li>Ibao</li>
+            <li>Mina</li>
+            <li>Poblacion</li>
+            <li>Sta. Cruz</li>
+            <li>Sta. Cruz Biga-a</li>
+            <li>Silakat Nonok</li>
+            <li>Tayhawan</li>
+          </ul>
+          <a href="#Lezo">Tourist Spots in Lezo...</a>
+          <p><a class="nav" href="https://lezo.gov.ph/profile/" target="_blank" rel="noopener">Learn more about
+              Lezo...</a></p>
+        </details>
+      </article>
+
+      <article class="town-card" style="--town-logo: url('libacao.png')">
+        <h3>Libacao</h3>
+        <details class="see-more">
+          <summary>See more . . .</summary>
+          <p>Libacao reaches into Aklan’s forested interior and is
+            closely connected to the Aklan River. Its Baesa Parada features decorated bamboo rafts, and its uplands
+            offer mountain scenery.</p>
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125149.4011908999!2d122.28280969999999!3d11.413440650000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33af83eb99f3048d%3A0xe4a067dc5c4640fb!2sLibacao%2C%20Aklan!5e0!3m2!1sen!2sph!4v1794807177427!5m2!1sen!2sph"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <h4>Geography</h4>
+          <p>The municipality has a land area of 254.98 square kilometers or 98.45 square miles which constitutes 14.49%
+            of Aklan's total area. Its population as determined by the 2020 Census was 28,272. This represented 4.59% of
+            the total population of Aklan province, or 0.36% of the overall population of the Western Visayas region.
+            Based on these figures, the population density is computed at 111 inhabitants per square kilometer or 287
+            inhabitants per square mile.
+
+          </p>
+          <h4>Barangays</h4>
+          <ul>
+            <li>Agmailig</li>
+            <li>Alfonso XII</li>
+            <li>Batobato</li>
+            <li>Bonza</li>
+            <li>Calacabian</li>
+            <li>Calamcan</li>
+            <li>Can-awan</li>
+            <li>Casit-an</li>
+            <li>Dalagsaan</li>
+            <li>Guadalupe</li>
+            <li>Janlud</li>
+            <li>Julita</li>
+            <li>Luctoga</li>
+            <li>Magugba</li>
+            <li>Manika</li>
+            <li>Ogsip</li>
+            <li>Ortega</li>
+            <li>Oyang</li>
+            <li>Pampango</li>
+            <li>Pinonoy</li>
+            <li>Poblacion</li>
+            <li>Rivera</li>
+            <li>Rosal</li>
+            <li>Sibalew</li>
+          </ul>
+          <a href="#Libacao">Tourist Spots in Libacao...</a>
+          <p><a class="nav" href="https://aklan.gov.ph/tourism/libacao/" target="_blank" rel="noopener">Learn more about
+              Libacao...</a></p>
+        </details>
+      </article>
+      <article class="town-card" style="--town-logo: url('madalag.png')">
+        <h3>Madalag</h3>
+
+        <details class="see-more">
+          <summary>See more . . .</summary>
+          <p>Madalag is a mountainous agricultural town known
+            for rivers, waterfalls, and the Liktinon White Rocks. Its Tinuom Festival celebrates a traditional highland
+            chicken dish.</p>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125136.96596969567!2d122.23929785000001!3d11.44160675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33af869ec441bd61%3A0xddd86bddb2c536bb!2sMadalag%2C%20Aklan!5e0!3m2!1sen!2sph!4v1795349962169!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <h4>Geography</h4>
+          <p>The municipality has a land area of 269.60 square kilometers or 104.09 square miles which constitutes 15.32% of Aklan's total area. Its population as determined by the 2020 Census was 18,890. This represented 3.07% of the total population of Aklan province, or 0.24% of the overall population of the Western Visayas region. Based on these figures, the population density is computed at 70 inhabitants per square kilometer or 181 inhabitants per square mile.</p>
+          <h4>Barangays</h4>
+          <ul>
+
+          </ul>
+          <a href="#Banga">Tourist Spots in Banga...</a>
+          <p><a class="nav" href="https://bangaaklan.gov.ph/" target="_blank" rel="noopener">Learn more about
+              Banga...</a></p>
+        </details>
+      </article>
+      <article class="town-card" style="--town-logo: url('makato.png')">
+        <h3>Makato</h3>
+
+        <details class="see-more">
+          <summary>See more . . .</summary>
+          <p>Makato is an inland municipality where farming and
+            local religious celebrations are part of community life. It holds its own Santo Niño Ati-Atihan celebration.
+          </p>
+
+
+          <h4>Geography</h4>
+          <p></p>
+          <h4>Barangays</h4>
+          <ul>
+
+          </ul>
+          <a href="#Banga">Tourist Spots in Banga...</a>
+          <p><a class="nav" href="https://bangaaklan.gov.ph/" target="_blank" rel="noopener">Learn more about
+              Banga...</a></p>
+        </details>
+      </article>
+      <article class="town-card" style="--town-logo: url('malay.png')">
+        <h3>Malay</h3>
+        <details class="see-more">
+          <summary>See more . . .</summary>
+          <p>Malay is Aklan’s northwestern municipality and includes
+            Boracay Island. Its communities are connected to coastal life, fishing, and tourism.</p>
+
+
+          <h4>Geography</h4>
+          <p></p>
+          <h4>Barangays</h4>
+          <ul>
+
+          </ul>
+          <a href="#Banga">Tourist Spots in Banga...</a>
+          <p><a class="nav" href="https://bangaaklan.gov.ph/" target="_blank" rel="noopener">Learn more about
+              Banga...</a></p>
+        </details>
+
+      </article>
+      <article class="town-card" style="--town-logo: url('malinao.png')">
+        <h3>Malinao</h3>
+
+        <details class="see-more">
+          <summary>See more . . .</summary>
+          <p>Malinao is an inland municipality with agricultural
+            and river communities. Local fiestas and parish traditions are important parts of town life.</p>
+
+          <h4>Geography</h4>
+          <p></p>
+          <h4>Barangays</h4>
+          <ul>
+
+          </ul>
+          <a href="#Banga">Tourist Spots in Banga...</a>
+          <p><a class="nav" href="https://bangaaklan.gov.ph/" target="_blank" rel="noopener">Learn more about
+              Banga...</a></p>
+        </details>
+      </article>
+      <article class="town-card" style="--town-logo: url('nabas.webp')">
+        <h3>Nabas</h3>
+        <details class="see-more">
+          <summary>See more . . .</summary>
+          <p>Nabas lies between Aklan’s western coast and
+            uplands. Its forests, rivers, and waterfalls give the town a strong connection to nature. Nabas is also
+            known for bariw weaving.</p>
+
+
+          <h4>Geography</h4>
+          <p></p>
+          <h4>Barangays</h4>
+          <ul>
+
+          </ul>
+          <a href="#Banga">Tourist Spots in Banga...</a>
+          <p><a class="nav" href="https://bangaaklan.gov.ph/" target="_blank" rel="noopener">Learn more about
+              Banga...</a></p>
+        </details>
+      </article>
+      <article class="town-card" style="--town-logo: url('new washington.png')">
+        <h3>New Washington</h3>
+        <details class="see-more">
+          <summary>See more . . .</summary>
+
+          <p>New Washington faces Batan Bay and is known
+            for seafood and coastal livelihoods. It is also the birthplace of Cardinal Jaime Sin and the location of the
+            Pacto de Sangre site in Ochando.</p>
+
+          <h4>Geography</h4>
+          <p></p>
+          <h4>Barangays</h4>
+          <ul>
+
+          </ul>
+          <a href="#Banga">Tourist Spots in Banga...</a>
+          <p><a class="nav" href="https://bangaaklan.gov.ph/" target="_blank" rel="noopener">Learn more about
+              Banga...</a></p>
+        </details>
+      </article>
+      <article class="town-card" style="--town-logo: url('numancia.png')">
+        <h3>Numancia</h3>
+        <details class="see-more">
+          <summary>See more . . .</summary>
+          <p>Numancia lies near Kalibo, within the connected communities
+            and agricultural lands of the Aklan River plain. Its town center and parish are important gathering places.
+          </p>
+
+          <h4>Geography</h4>
+          <p></p>
+          <h4>Barangays</h4>
+          <ul>
+
+          </ul>
+          <a href="#Banga">Tourist Spots in Banga...</a>
+          <p><a class="nav" href="https://bangaaklan.gov.ph/" target="_blank" rel="noopener">Learn more about
+              Banga...</a></p>
+        </details>
+      </article>
+      <article class="town-card" style="--town-logo: url('tangalan.png')">
+        <h3>Tangalan</h3>
+        <details class="see-more">
+          <summary>See more . . .</summary>
+          <p>Tangalan is known for coastal communities and natural
+            attractions such as Jawili Falls and nearby beaches. It lies along Aklan’s northern coastal route.</p>
+
+
+          <h4>Geography</h4>
+          <p></p>
+          <h4>Barangays</h4>
+          <ul>
+
+          </ul>
+          <a href="#Banga">Tourist Spots in Banga...</a>
+          <p><a class="nav" href="https://bangaaklan.gov.ph/" target="_blank" rel="noopener">Learn more about
+              Banga...</a></p>
+        </details>
+      </article>
+
+      <p id="no-results" class="no-results" hidden>
+        No municipalities match your search.
+      </p>
+    </section>
+
+    <button class="quiz-launch" id="open-trip-quiz" type="button">
+      <span class="quiz-launch-icon">✳</span>
+      <span><strong>Not sure where to go?</strong><small>Answer a few quick questions for ideas</small></span>
+      <span class="quiz-launch-arrow">↗</span>
+    </button>
+
+    <dialog class="trip-quiz" id="trip-quiz" aria-labelledby="quiz-title">
+      <div class="quiz-panel">
+        <button class="quiz-close" id="close-trip-quiz" type="button" aria-label="Close questionnaire">×</button>
+
+        <p class="eyebrow">Your Aklan adventure</p>
+        <h2 id="quiz-title">Let’s find your kind of trip.</h2>
+        <p class="quiz-intro">Tell us what you’re in the mood for and we’ll suggest a few places to explore.</p>
+
+        <form id="trip-quiz-form">
+          <label for="quiz-interest">What would you like to see?</label>
+          <select id="quiz-interest" name="interest" required>
+            <option value="">Choose a scenery</option>
+            <option value="beach">Beaches and the sea</option>
+            <option value="waterfall">Waterfalls and rivers</option>
+            <option value="hills">Hills and viewpoints</option>
+            <option value="culture">Culture and local traditions</option>
+            <option value="nature">Quiet nature spots</option>
+          </select>
+
+          <label for="quiz-pace">What kind of day sounds good?</label>
+          <select id="quiz-pace" name="pace" required>
+            <option value="">Choose your pace</option>
+            <option value="relaxed">Relaxed and unhurried</option>
+            <option value="active">Active and outdoorsy</option>
+            <option value="local">Local culture and history</option>
+          </select>
+
+          <button class="quiz-submit" type="submit">Show my recommendations <span>↗</span></button>
+        </form>
+
+        <div class="quiz-results" id="quiz-results" aria-live="polite" hidden></div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const quiz = document.getElementById("trip-quiz");
+            const closeButton = document.getElementById("close-trip-quiz");
+            const form = document.getElementById("trip-quiz-form");
+            const results = document.getElementById("quiz-results");
+
+            if (!quiz || !closeButton || !form || !results) return;
+
+            quiz.showModal();
+
+            closeButton.addEventListener("click", function () {
+              quiz.close();
+            });
+
+            quiz.addEventListener("click", function (event) {
+              if (event.target === quiz) quiz.close();
+            });
+
+            form.addEventListener("submit", function (event) {
+              event.preventDefault();
+
+              const style = document.getElementById("trip-style").value;
+              const pace = document.getElementById("trip-pace").value;
+
+              const recommendations = {
+                beach: {
+                  relaxed: "For a relaxed beach trip, visit Malay for Boracay, Buruanga for quiet coastal scenery, or Nabas for its beaches and natural springs.",
+                  adventure: "For an active coastal trip, explore Malay for island activities, Buruanga for scenic shorelines, or New Washington for seaside views."
+                },
+                nature: {
+                  relaxed: "For a peaceful nature trip, visit Kalibo for Bakhawan Eco-Park, Libacao for its green mountain scenery, or Madalag for its rivers and hills.",
+                  adventure: "For a nature adventure, explore Tangalan for Jawili Falls, Madalag for its rivers, Libacao for mountain trails, or Nabas for waterfalls and springs."
+                },
+                culture: {
+                  relaxed: "For local culture and history, explore Kalibo, Lezo, Numancia, or Banga and enjoy their town centers, local food, and community traditions.",
+                  adventure: "For a town-hopping trip, explore Kalibo, Banga, Ibajay, Malinao, Makato, and Tangalan to discover local landmarks, heritage, and town life."
+                }
+              };
+
+              const allTowns = [
+                "Altavas", "Balete", "Banga", "Batan", "Buruanga",
+                "Ibajay", "Kalibo", "Lezo", "Libacao", "Madalag",
+                "Makato", "Malay", "Malinao", "Nabas", "New Washington",
+                "Numancia", "Tangalan"
+              ];
+
+              const recommendation =
+                recommendations[style]?.[pace] ||
+                "Explore the towns of Aklan and discover the destination that fits your trip.";
+
+              results.innerHTML = `
+        <p>${recommendation}</p>
+        <p><strong>Explore all 17 towns:</strong> ${allTowns.join(", ")}.</p>
+      `;
+            });
+          });
+        </script>
+      </div>
+    </dialog>
+    <br>
+    <section id="milestones" class="milestone-section">
+      <div class="journey-heading">
+        <div>
+          <p class="eyebrow">One town at a time</p>
+          <h2>My Aklan Journey</h2>
+          <p class="section-intro">
+            Tick the towns you have visited. Your route grows as you collect each milestone.
+          </p>
+        </div>
+
+        <div class="journey-progress">
+          <strong id="journey-count">0</strong>
+          <span>of 17 towns visited</span>
+        </div>
+      </div>
+
+      <div class="journey-layout">
+        <div class="journey-map-wrap">
+          <div id="journey-map" class="journey-map" role="application"
+            aria-label="Aklan map showing visited municipalities"></div>
+          <p class="journey-map-note">
+            The provincial boundary and town markers follow Aklan’s real geography. Visited towns are highlighted on the
+            map.
+          </p>
+        </div>
+
+        <div class="journey-checklist">
+          <div class="journey-tools">
+            <p>Visited towns</p>
+            <button id="clear-journey" type="button">Clear all</button>
+          </div>
+
+          <div id="journey-list" class="journey-list"></div>
+        </div>
+      </div>
+      <p id="journey-congrats" class="journey-congrats" hidden>
+        🎉 Congratulations! You have completed your Aklan Journey and visited all 17 towns!
+      </p>
+    </section>
+    <section id="game" class="game-section">
+      <p class="eyebrow">Play & discover</p>
+      <h2>Aklan Quest</h2>
+      <p class="section-intro">Answer ten quick questions and earn a milestone badge. You can play while signed out;
+        progress saves to your profile only after you log in.</p>
+      <div class="game-card">
+        <div class="game-topline"><span id="game-round">Question 1 of 10</span><span id="game-score">Score: 0</span>
+        </div>
+        <h3 id="game-question"></h3>
+        <div id="game-answers" class="game-answers"></div>
+        <p id="game-feedback" class="game-feedback" aria-live="polite"></p><button id="game-next" class="primary-action"
+          type="button" hidden>Next question</button><button id="game-restart" class="primary-action" type="button"
+          hidden>Play again</button>
+      </div>
+    </section>
+    <section id="plans" class="plans-section">
+      <p class="eyebrow">Dream it, then go</p>
+      <h2>My Future Plans</h2>
+      <p class="section-intro">Save places and experiences you want to explore in Aklan. Sign in to keep your list on
+        this device.</p>
+      <form id="plan-form" class="plan-form"><label for="plan-text">What would you like to do?<input id="plan-text"
+            maxlength="120" placeholder="e.g. See Jawili Falls" required></label><label for="plan-town">Town<select
+            id="plan-town" required>
+            <option value="">Choose a town</option>
+            <option>Altavas</option>
+            <option>Balete</option>
+            <option>Banga</option>
+            <option>Batan</option>
+            <option>Buruanga</option>
+            <option>Ibajay</option>
+            <option>Kalibo</option>
+            <option>Lezo</option>
+            <option>Libacao</option>
+            <option>Madalag</option>
+            <option>Makato</option>
+            <option>Malay</option>
+            <option>Malinao</option>
+            <option>Nabas</option>
+            <option>New Washington</option>
+            <option>Numancia</option>
+            <option>Tangalan</option>
+          </select></label><button class="primary-action" type="submit">Add </button></form>
+      <ul id="plan-list" class="plan-list" aria-live="polite"></ul>
+    </section>
+      <p class="eyebrow">Your progress</p>
+      <h2>Aklan Milestones</h2>
+      <p class="section-intro">Collect badges as you explore and play. Your progress saves only while signed in.</p>
+      <div id="milestone-grid" class="milestone-grid" aria-live="polite"></div>
+    </section>
+    <dialog id="milestone-congrats" class="milestone-congrats" aria-labelledby="milestone-congrats-title">
+      <div class="milestone-congrats-card"><span class="milestone-confetti" aria-hidden="true">🎉</span>
+        <p class="eyebrow">Milestone unlocked</p>
+        <h2 id="milestone-congrats-title">Congratulations!</h2>
+        <p id="milestone-congrats-message">You earned a new Aklan milestone.</p><button id="milestone-congrats-close"
+          class="primary-action" type="button">Awesome!</button>
+      </div>
+    </dialog>
+
+    <dialog id="all-milestones-congrats" class="all-milestones-congrats" aria-labelledby="all-milestones-title">
+      <div class="all-milestones-card"><span aria-hidden="true">🏆</span>
+        <p class="eyebrow">Aklan explorer</p>
+        <h2 id="all-milestones-title">You did it!</h2>
+        <p>You completed every Aklan milestone. Your journey, quiz, and travel plans show what an amazing explorer you
+          are!</p><button id="all-milestones-close" class="primary-action" type="button">Celebrate!</button>
+      </div>
+    </dialog>
+    <dialog id="login-dialog" class="login-dialog"><button class="dialog-close" type="button" data-login-close
+        aria-label="Close login">×</button>
+      <p class="eyebrow">Welcome</p>
+      <h2 id="login-title">Log in</h2>
+      <p class="login-note">Your account stays on this device. No email or online account is used.</p>
+      <form id="login-form"><label for="login-name">Name</label><input id="login-name" type="text" maxlength="50"
+          autocomplete="username" required><label for="login-password">Password</label><input id="login-password"
+          type="password" autocomplete="current-password" minlength="8" required><button id="login-submit"
+          class="primary-action" type="submit">Log in</button>
+        <p id="login-status" class="login-status" aria-live="polite"></p>
+      </form><button id="login-mode-toggle" class="text-action" type="button">Create local account</button><button
+        id="logout-button" class="text-action" type="button" hidden>Log out</button><button class="text-action"
+        type="button" data-login-close>Maybe later</button>
+    </dialog>
+
+    <section id="feedback" class="feedback-section">
+      <h2>Share Your Aklan Experience</h2>
+      <p>Ibahagi ang binisita mong bayan, rating, kuwento, at mga larawan o video.</p>
+
+      <form id="feedback-form">
+        <label for="feedback-name">Name</label>
+        <input id="feedback-name" type="text" maxlength="50" required>
+
+        <label for="feedback-town">Town you visited</label>
+        <select id="feedback-town" required>
+          <option value="" disabled selected>Choose a town</option>
+          <option>Altavas</option>
+          <option>Balete</option>
+          <option>Banga</option>
+          <option>Batan</option>
+          <option>Buruanga</option>
+          <option>Ibajay</option>
+          <option>Kalibo</option>
+          <option>Lezo</option>
+          <option>Libacao</option>
+          <option>Madalag</option>
+          <option>Makato</option>
+          <option>Malay</option>
+          <option>Malinao</option>
+          <option>Nabas</option>
+          <option>New Washington</option>
+          <option>Numancia</option>
+          <option>Tangalan</option>
+        </select>
+
+        <fieldset class="rating">
+          <legend>Your rating</legend>
+          <div class="star-options">
+            <input type="radio" id="star-5" name="rating" value="5" required>
+            <label for="star-5" title="5 stars">★</label>
+            <input type="radio" id="star-4" name="rating" value="4">
+            <label for="star-4" title="4 stars">★</label>
+            <input type="radio" id="star-3" name="rating" value="3">
+            <label for="star-3" title="3 stars">★</label>
+            <input type="radio" id="star-2" name="rating" value="2">
+            <label for="star-2" title="2 stars">★</label>
+            <input type="radio" id="star-1" name="rating" value="1">
+            <label for="star-1" title="1 star">★</label>
+          </div>
+        </fieldset>
+
+        <label for="feedback-message">Your experience</label>
+        <textarea id="feedback-message" rows="4" maxlength="500" required></textarea>
+
+        <label for="feedback-photos">Add photo</label>
+        <input id="feedback-photos" type="file" accept="image/*" multiple>
+        <div id="feedback-photo-previews" class="feedback-media-previews"></div>
+
+        <label for="feedback-video">Add 1 video (optional)</label>
+        <input id="feedback-video" type="file" accept="video/*">
+        <div id="feedback-video-preview" class="feedback-video-preview"></div>
+
+        <button type="submit">Share my experience</button>
+        <p id="feedback-status" aria-live="polite"></p>
+      </form>
+
+      <div class="feedback-list">
+        <h3>Visitor Experiences</h3>
+        <div id="feedback-entries" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <style>
+      #feedback-form {
+        display: grid;
+        gap: 10px;
+      }
+
+      #feedback-form label,
+      #feedback-form legend {
+        color: var(--green-dark, #123f36);
+        font-weight: 800;
+      }
+
+      #feedback-form input[type="text"],
+      #feedback-form select,
+      #feedback-form textarea,
+      #feedback-form input[type="file"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid var(--line, rgba(35, 91, 69, 0.2));
+        border-radius: 14px;
+        background: var(--surface, #edf2e8);
+        color: var(--ink, #193a35);
+        font: inherit;
+      }
+
+      #feedback-form textarea {
+        resize: vertical;
+      }
+
+      .rating {
+        margin: 8px 0;
+        padding: 0;
+        border: 0;
+      }
+
+      .star-options {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        width: fit-content;
+      }
+
+      .star-options input {
+        position: absolute;
+        opacity: 0;
+      }
+
+      .star-options label {
+        padding-right: 4px;
+        color: var(--green-dark, #123f36);
+        cursor: pointer;
+        font-size: 2.2rem;
+        transition: color 0.2s ease, transform 0.2s ease;
+      }
+
+      .star-options input:checked+label,
+      .star-options input:checked~label,
+      .star-options label:hover,
+      .star-options label:hover~label {
+        color: #f2c94c !important;
+      }
+
+      .star-options label:hover {
+        transform: scale(1.15);
+      }
+
+      .feedback-media-previews,
+      .feedback-entry-media {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 8px;
+      }
+
+      .feedback-media-previews img,
+      .feedback-entry-media img {
+        width: 120px;
+        height: 100px;
+        border-radius: 14px;
+        object-fit: cover;
+      }
+
+      .feedback-video-preview video {
+        width: min(100%, 320px);
+        max-height: 220px;
+        margin-top: 8px;
+        border-radius: 14px;
+      }
+
+      .feedback-entry-media video {
+        width: min(100%, 320px);
+        max-height: 220px;
+        border-radius: 14px;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("feedback-form");
+        if (!form || form.dataset.feedbackHandlerAttached === "true") return;
+        form.dataset.feedbackHandlerAttached = "true";
+        const entries = document.getElementById("feedback-entries");
+        const photoInput = document.getElementById("feedback-photos");
+        const photoPreviews = document.getElementById("feedback-photo-previews");
+        const videoInput = document.getElementById("feedback-video");
+        const videoPreview = document.getElementById("feedback-video-preview");
+        const status = document.getElementById("feedback-status");
+        const storageKey = "aklanVisitorFeedback";
+        const databaseName = "AklanFeedbackMedia";
+        let selectedPhotos = [];
+        let selectedVideo = null;
+        let previewUrls = [];
+
+        function openDatabase() {
+          return new Promise(function (resolve, reject) {
+            const request = indexedDB.open(databaseName, 1);
+
+            request.onupgradeneeded = function () {
+              const database = request.result;
+
+              if (!database.objectStoreNames.contains("media")) {
+                database.createObjectStore("media", { keyPath: "id" });
+              }
+            };
+
+            request.onsuccess = function () {
+              resolve(request.result);
+            };
+
+            request.onerror = function () {
+              reject(request.error);
+            };
+          });
+        }
+
+        function loadEntries() {
+          try {
+            const saved = JSON.parse(localStorage.getItem(storageKey) || "[]");
+            if (!Array.isArray(saved)) return [];
+
+            const signature = function (item) {
+              return [item.name, item.town, item.message, item.rating]
+                .map((value) => String(value || "").trim().toLowerCase())
+                .join("\u241f");
+            };
+            const cleaned = [];
+            saved.forEach(function (item) {
+              const previous = cleaned[cleaned.length - 1];
+              if (previous && signature(previous) === signature(item)) {
+                const mediaIds = new Set([...(previous.mediaIds || []), ...(item.mediaIds || [])]);
+                previous.mediaIds = Array.from(mediaIds);
+                if (!previous.photo && item.photo) previous.photo = item.photo;
+                return;
+              }
+              cleaned.push(item);
+            });
+
+            if (cleaned.length !== saved.length) {
+              localStorage.setItem(storageKey, JSON.stringify(cleaned));
+            }
+            return cleaned;
+          } catch {
+            return [];
+          }
+        }
+
+        function saveMedia(files) {
+          return openDatabase().then(function (database) {
+            return new Promise(function (resolve, reject) {
+              const transaction = database.transaction("media", "readwrite");
+              const store = transaction.objectStore("media");
+              const ids = files.map(function (file) {
+                const id =
+                  window.crypto && crypto.randomUUID
+                    ? crypto.randomUUID()
+                    : Date.now() + "-" + Math.random().toString(16).slice(2);
+
+                store.put({ id: id, file: file, type: file.type });
+                return id;
+              });
+
+              transaction.oncomplete = function () {
+                resolve(ids);
+              };
+
+              transaction.onerror = function () {
+                reject(transaction.error);
+              };
+            });
+          });
+        }
+
+        function getMedia(id) {
+          return openDatabase().then(function (database) {
+            return new Promise(function (resolve, reject) {
+              const transaction = database.transaction("media", "readonly");
+              const request = transaction.objectStore("media").get(id);
+
+              request.onsuccess = function () {
+                resolve(request.result || null);
+              };
+
+              request.onerror = function () {
+                reject(request.error);
+              };
+            });
+          });
+        }
+
+        function clearPreviews() {
+          previewUrls.forEach(function (url) {
+            URL.revokeObjectURL(url);
+          });
+
+          previewUrls = [];
+          photoPreviews.replaceChildren();
+          videoPreview.replaceChildren();
+        }
+
+        photoInput.addEventListener("change", function () {
+          clearPreviews();
+
+          const files = Array.from(photoInput.files || []);
+          selectedPhotos = files.filter(function (file) {
+            return file.type.startsWith("image/");
+          }).slice(0, 5);
+
+          if (files.length > 5) {
+            alert("You can add up to 5 photos. The first 5 are selected.");
+          }
+
+          selectedPhotos.forEach(function (file) {
+            const url = URL.createObjectURL(file);
+            previewUrls.push(url);
+
+            const image = document.createElement("img");
+            image.src = url;
+            image.alt = "Selected photo preview";
+            photoPreviews.appendChild(image);
+          });
+
+          if (selectedVideo) {
+            showVideoPreview(selectedVideo);
+          }
+        });
+
+        function showVideoPreview(file) {
+          const url = URL.createObjectURL(file);
+          previewUrls.push(url);
+
+          const video = document.createElement("video");
+          video.src = url;
+          video.controls = true;
+          video.preload = "metadata";
+          videoPreview.replaceChildren(video);
+        }
+
+        videoInput.addEventListener("change", function () {
+          videoPreview.replaceChildren();
+          selectedVideo = videoInput.files && videoInput.files[0]
+            ? videoInput.files[0]
+            : null;
+
+          if (selectedVideo && selectedVideo.type.startsWith("video/")) {
+            showVideoPreview(selectedVideo);
+          } else {
+            selectedVideo = null;
+          }
+        });
+
+        async function displayEntries() {
+          entries.replaceChildren();
+
+          const feedback = loadEntries();
+
+          if (!feedback.length) {
+            const empty = document.createElement("p");
+            empty.textContent = "No experiences yet. Be the first to share yours!";
+            entries.appendChild(empty);
+            return;
+          }
+
+          for (const item of feedback) {
+            const card = document.createElement("article");
+            card.className = "feedback-entry";
+
+            const name = document.createElement("h4");
+            name.textContent = item.name || "Visitor";
+
+            const town = document.createElement("p");
+            town.textContent = item.town ? "📍 " + item.town : "";
+
+            const stars = document.createElement("div");
+            stars.className = "feedback-stars";
+            stars.textContent =
+              "★".repeat(Number(item.rating) || 0) +
+              "☆".repeat(5 - (Number(item.rating) || 0));
+
+            const message = document.createElement("p");
+            message.textContent = item.message || "";
+
+            card.append(name, town, stars, message);
+
+            if (item.mediaIds && item.mediaIds.length) {
+              const mediaRow = document.createElement("div");
+              mediaRow.className = "feedback-entry-media";
+
+              for (const id of item.mediaIds) {
+                try {
+                  const saved = await getMedia(id);
+                  if (!saved) continue;
+
+                  const url = URL.createObjectURL(saved.file);
+
+                  if (saved.type.startsWith("image/")) {
+                    const image = document.createElement("img");
+                    image.src = url;
+                    image.alt = "Photo shared by " + (item.name || "a visitor");
+                    image.loading = "lazy";
+                    mediaRow.appendChild(image);
+                  } else if (saved.type.startsWith("video/")) {
+                    const video = document.createElement("video");
+                    video.src = url;
+                    video.controls = true;
+                    video.preload = "metadata";
+                    mediaRow.appendChild(video);
+                  }
+                } catch { }
+              }
+
+              if (mediaRow.children.length) {
+                card.appendChild(mediaRow);
+              }
+            }
+
+            entries.appendChild(card);
+          }
+        }
+
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const name = document.getElementById("feedback-name").value.trim();
+          const town = document.getElementById("feedback-town").value;
+          const message = document.getElementById("feedback-message").value.trim();
+          const rating = document.querySelector('input[name="rating"]:checked');
+
+          if (!name || !town || !message || !rating) {
+            alert("Please complete your name, town, experience, and rating.");
+            return;
+          }
+
+          const files = selectedPhotos.slice(0, 5);
+
+          if (selectedVideo) {
+            files.push(selectedVideo);
+          }
+
+          try {
+            const mediaIds = files.length ? await saveMedia(files) : [];
+            const feedback = loadEntries();
+
+            feedback.unshift({
+              name: name,
+              town: town,
+              message: message,
+              rating: Number(rating.value),
+              mediaIds: mediaIds
+            });
+
+            localStorage.setItem(storageKey, JSON.stringify(feedback));
+            form.reset();
+            selectedPhotos = [];
+            selectedVideo = null;
+            clearPreviews();
+            status.textContent = "Thanks! Your experience has been added.";
+            await displayEntries();
+          } catch {
+            status.textContent =
+              "Could not save the upload. Try smaller files or another browser.";
+          }
+        });
+
+        displayEntries();
+      });
+    </script>
+
+    <section>
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://aklan.gov.ph/profile/historical-background/">Provincial Government of Aklan: Historical
+            Background</a></li>
+        <li><a href="https://psa.gov.ph/classification/psgc/citimuni/0600400000">Philippine Statistics Authority: Aklan
+            Municipalities</a></li>
+        <li><a href="https://lawphil.net/statutes/repacts/ra1956/ra_1414_1956.html">Republic Act No. 1414</a></li>
+        <li><a href="https://philhistoricsites.nhcp.gov.ph/registry_database/the-code-of-kalantiaw/">National Historical
+            Commission: Code of Kalantiaw</a></li>
+        <li><a href="https://aklan.gov.ph/tourism/altavas/">Provincial Government of Aklan: Altavas</a></li>
+        <li><a href="https://altavasaklan.gov.ph/historical-landmark-and-structures/">Municipality of Altavas:
+            Historical Landmarks</a></li>
+        <li><a href="https://aklan.gov.ph/tourism/kalibo/">Provincial Government of Aklan: Kalibo</a></li>
+        <li><a href="https://aklan.gov.ph/tourism/activities/">Provincial Government of Aklan: Activities and
+            Festivals</a></li>
+        <li><a href="https://aklan.gov.ph/tourism/nabas/">Provincial Government of Aklan: Nabas</a></li>
+        <li><a href="https://aklan.gov.ph/tourism/libacao/">Provincial Government of Aklan: Libacao</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="#home"> <img src="KabisitaAklanLogo-removebg-preview.png"
+          alt="Kabisita Aklan home" />
+      </a>
+      <p>Discover the history, culture, and places of Aklan.</p>
+      <nav aria-label="Footer navigation">
+        <a href="#history">History</a>
+        <a href="#culture">Festivals</a>
+        <a href="#tourism">Tourism</a>
+        <a href="#towns">Towns</a>
+      </nav>
+
+    </div>
+
+    <div class="footer-socials" aria-label="Social media">
+      <a href="https://www.facebook.com/profile.php?id=61596545282313" target="_blank" rel="noopener noreferrer"
+        aria-label="Facebook">Facebook</a>
+      <a href="https://www.instagram.com/kabisitaaklan/" target="_blank" rel="noopener noreferrer"
+        aria-label="Instagram">Instagram</a>
+    </div>
+    <small>© 2026 Isar . All Rights Reserved.</small>
+  </footer>
+</body>
+
+</html>
